@@ -24,7 +24,7 @@ const App = () => {
 
 const urlOpener = ()=>{
   const product = data.find((curProduct)=> curProduct.style_code==query);
-  product?window.open(`https://www.myntra.com/jackets/qurvii%2b/qurvii-plus-size-fleece-longline-open-front-hooded-jacket-with-patchwork/${product.style_id}/buy`):setError(true);
+  product?window.open(`https://www.myntra.com/jackets/qurvii%2b/styleNumber=${product.style_code}/${product.style_id}/buy`):setError(true);
 }
 
 const viewRackSpace = ()=>{
