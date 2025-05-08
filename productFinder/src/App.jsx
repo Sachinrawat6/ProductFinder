@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-// const API = "https://sachinrawat6.github.io/api/NEW_PRODUCT.json";
-// const API = "https://sachinrawat6.github.io/api/index.json";
 const API = `https://inventorybackend-m1z8.onrender.com/api/product`;
-// const API = "https://inventory-3ca54-default-rtdb.asia-southeast1.firebasedatabase.app/products.json";
+
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -31,7 +29,7 @@ const urlOpener = ()=>{
 
 const viewRackSpace = ()=>{
   const rackSpace = data.find((curProduct)=>curProduct.style_code==query);
-  return rackSpace.rack_space;
+  return rackSpace?.rack_space || "No Rack Space";
 }
 
 // query.length==5?viewRackSpace():"";
