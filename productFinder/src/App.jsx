@@ -24,7 +24,7 @@ const App = () => {
 
 const urlOpener = ()=>{
   const product = data.find((curProduct)=> curProduct.style_code==query);
-  product?window.open(`https://www.myntra.com/jackets/qurvii%2b/styleNumber=${product.style_code}/${product.style_id}/buy`):setError(true);
+  product?window.open(`https://www.myntra.com/jackets/qurvii%2b/styleNumber=${product?.style_code}/${product.style_id}/buy`):setError(true);
 }
 
 const viewRackSpace = ()=>{
@@ -49,7 +49,7 @@ const handleSubmit = (e)=>{
       <h1 className='text-center font-bold text-2xl'><span className='text-blue-400'>Product</span> Searcher</h1>
       
       <hr className='w-60 mx-auto mt-2 text-gray-300' />
-      <p className={`${query.length>4?'text-center mt-4 w-40  mx-auto py-4':""}`}>  {query.length==5?`Rack Space : ${viewRackSpace()}`:""} </p>
+      <p className={`${query?.length>4?'text-center mt-4 w-40  mx-auto py-4':""}`}>  {query?.length==5?`Rack Space : ${viewRackSpace()}`:""} </p>
       <form onSubmit={handleSubmit} className='flex flex-col  mt-10 container mx-auto'>
         <input type="text"
         className='border-1 border-gray-200 w-80 mx-auto p-4 shadow-xs outline-blue-400 rounded-full'
